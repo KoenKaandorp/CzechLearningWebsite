@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Učím se česky — Learn Czech</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="brand" aria-label="Home">
+        <span class="brand__mark">č</span>
+        <span class="brand__text">Učím se česky</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav__link active" data-section="vocabulary">Vocabulary</button>
+        <button class="nav__link" data-section="pronunciation">Pronunciation</button>
+        <button class="nav__link" data-section="phrases">Phrases</button>
+        <button class="nav__link" data-section="verbs">Verbs</button>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <!-- =========== VOCABULARY =========== -->
+    <section class="section active" id="vocabulary">
+      <div class="section__head">
+        <p class="eyebrow">Slovní zásoba</p>
+        <h1 class="section__title">Vocabulary</h1>
+        <p class="section__lede">Build your beginner word bank, one flashcard at a time.</p>
+      </div>
+
+      <div class="chips" id="vocabChips" role="tablist" aria-label="Vocabulary categories"></div>
+
+      <div class="card flashcard" id="flashcard">
+        <div class="flashcard__progress">
+          <span id="vocabProgress">1 / 1</span>
+          <div class="progress-bar"><div class="progress-bar__fill" id="vocabProgressFill"></div></div>
+        </div>
+
+        <div class="flashcard__body">
+          <p class="flashcard__czech" id="vocabCzech">—</p>
+          <p class="flashcard__hint" id="vocabHint">—</p>
+          <p class="flashcard__english" id="vocabEnglish" hidden>—</p>
+        </div>
+
+        <div class="flashcard__actions">
+          <button class="btn btn--ghost" id="vocabPrev">← Previous</button>
+          <button class="btn btn--primary" id="vocabReveal">Show translation</button>
+          <button class="btn btn--ghost" id="vocabNext">Next →</button>
+        </div>
+
+        <p class="kbd-hint">Tip: use ← → to navigate, Space to flip</p>
+      </div>
+    </section>
+
+    <!-- =========== PRONUNCIATION =========== -->
+    <section class="section" id="pronunciation">
+      <div class="section__head">
+        <p class="eyebrow">Výslovnost</p>
+        <h1 class="section__title">Pronunciation</h1>
+        <p class="section__lede">The letters that make Czech sound like Czech.</p>
+      </div>
+
+      <div class="letter-grid" id="letterGrid"></div>
+
+      <div class="card hint-card">
+        <h3>How to use this</h3>
+        <p>Click any letter to see how it's pronounced and an example word that uses it. Czech pronunciation is consistent — once you learn these letters, you can read almost anything aloud.</p>
+      </div>
+    </section>
+
+    <!-- =========== PHRASES =========== -->
+    <section class="section" id="phrases">
+      <div class="section__head">
+        <p class="eyebrow">Užitečné fráze</p>
+        <h1 class="section__title">Essential Phrases</h1>
+        <p class="section__lede">Phrases that get you through your first day.</p>
+      </div>
+
+      <div class="chips" id="phraseChips" role="tablist" aria-label="Phrase categories"></div>
+
+      <div class="phrase-list" id="phraseList"></div>
+    </section>
+
+    <!-- =========== VERBS =========== -->
+    <section class="section" id="verbs">
+      <div class="section__head">
+        <p class="eyebrow">Časování sloves</p>
+        <h1 class="section__title">Verb Conjugation</h1>
+        <p class="section__lede">The four verbs you'll use most.</p>
+      </div>
+
+      <div class="chips" id="verbChips" role="tablist" aria-label="Verb selection"></div>
+
+      <div class="verb-layout">
+        <div class="card verb-table" id="verbTable"></div>
+
+        <div class="card quiz" id="quizCard">
+          <h3>Practice</h3>
+          <p class="quiz__prompt" id="quizPrompt">Loading…</p>
+          <input type="text" class="quiz__input" id="quizInput" placeholder="Type the conjugation…" autocomplete="off" spellcheck="false" />
+          <div class="quiz__actions">
+            <button class="btn btn--primary" id="quizCheck">Check</button>
+            <button class="btn btn--ghost" id="quizSkip">New question</button>
+          </div>
+          <p class="quiz__feedback" id="quizFeedback"></p>
+          <p class="quiz__score">Score: <span id="quizScore">0</span></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Made for slow, steady learning. Dobrou cestu!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
