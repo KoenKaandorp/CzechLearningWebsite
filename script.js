@@ -68,6 +68,35 @@ const VOCAB = {
     { cz: 'jíst',   en: 'to eat',        hint: '[yeest]' },
     { cz: 'pít',    en: 'to drink',      hint: '[peet]' },
   ],
+  'Question Words': [
+  { cz: 'kdo', en: 'who', hint: '[gdo]' },
+  { cz: 'co', en: 'what', hint: '[tso]' },
+  { cz: 'kde', en: 'where', hint: '[gdeh]' },
+  { cz: 'kdy', en: 'when', hint: '[gdi]' },
+  { cz: 'proč', en: 'why', hint: '[proch]' },
+  { cz: 'jak', en: 'how', hint: '[yahk]' },
+],
+Weather: [
+  { cz: 'slunce', en: 'sun', hint: '[sloon-tseh]' },
+  { cz: 'déšť', en: 'rain', hint: '[desht]' },
+  { cz: 'sníh', en: 'snow', hint: '[sneeh]' },
+  { cz: 'vítr', en: 'wind', hint: '[vee-tur]' },
+  { cz: 'mrak', en: 'cloud', hint: '[mrahk]' },
+],
+Transportation: [
+  { cz: 'vlak', en: 'train', hint: '[vlahk]' },
+  { cz: 'autobus', en: 'bus', hint: '[ow-toh-boos]' },
+  { cz: 'auto', en: 'car', hint: '[ow-toh]' },
+  { cz: 'letadlo', en: 'airplane', hint: '[leh-tah-dloh]' },
+  { cz: 'kolo', en: 'bicycle', hint: '[koh-loh]' },
+],
+Animals: [
+  { cz: 'pes', en: 'dog', hint: '[pes]' },
+  { cz: 'kočka', en: 'cat', hint: '[koch-kah]' },
+  { cz: 'kůň', en: 'horse', hint: '[koon-y]' },
+  { cz: 'pták', en: 'bird', hint: '[ptahk]' },
+  { cz: 'ryba', en: 'fish', hint: '[rih-bah]' },
+],
 };
 
 /* ----- Czech special letters ----- */
@@ -81,6 +110,24 @@ const LETTERS = [
   { char: 'ď', sound: 'soft d, like "d" in "duke"', example: 'ďábel — devil' },
   { char: 'ť', sound: 'soft t, like "t" in "tube"', example: 'kuťácký — tinkering' },
   { char: 'ň', sound: 'soft n, like "ny" in "canyon"', example: 'kůň — horse' },
+  { char: 'a', sound: 'a as in father', example: 'auto — car' },
+{ char: 'e', sound: 'e as in bed', example: 'pes — dog' },
+{ char: 'i', sound: 'ee as in see', example: 'víno — wine' },
+{ char: 'o', sound: 'o as in more', example: 'oko — eye' },
+{ char: 'u', sound: 'oo as in boot', example: 'ulice — street' },
+{ char: 'ch', sound: 'guttural ch like German "Bach"', example: 'chléb — bread' },
+{ char: 'ou', sound: 'ow as in house', example: 'koukat — to look' },
+{ char: 'au', sound: 'ow as in cow', example: 'auto — car' },
+{
+  char: 'Length',
+  sound: 'Long vowels are pronounced longer and clearly',
+  example: 'a vs á'
+},
+{
+  char: 'Stress',
+  sound: 'Stress is almost always on the first syllable',
+  example: 'PRA-ha'
+},
 ];
 
 /* ----- Essential phrases by category ----- */
@@ -115,6 +162,22 @@ const PHRASES = {
     { cz: 'Dal/a bych si kávu', en: 'I would like coffee', pron: '[dahl-ah bikh see kah-voo]' },
     { cz: 'Účet, prosím', en: 'The bill, please', pron: '[oo-chet proh-seem]' },
   ],
+  Restaurant: [
+  { cz: 'Mohu dostat menu?', en: 'Can I get the menu?', pron: '[mo-hoo dos-taht meh-noo]' },
+  { cz: 'Dám si pivo', en: 'I will have a beer', pron: '[dahm see pee-vo]' },
+  { cz: 'To je výborné', en: 'This is delicious', pron: '[toh yeh vee-bor-neh]' },
+  { cz: 'Zaplatím', en: 'I will pay', pron: '[zah-plah-teem]' },
+],
+Travel: [
+  { cz: 'Kde je hotel?', en: 'Where is the hotel?', pron: '[gdeh yeh ho-tel]' },
+  { cz: 'Potřebuji taxi', en: 'I need a taxi', pron: '[poht-rzheh-boo-yi tahk-see]' },
+  { cz: 'Kolik stojí lístek?', en: 'How much is the ticket?', pron: '[koh-lik stoh-yee lees-tek]' },
+],
+'Small Talk': [
+  { cz: 'Odkud jsi?', en: 'Where are you from?', pron: '[od-kood ysi]' },
+  { cz: 'Mám rád Česko', en: 'I like Czechia', pron: '[mahm raht ches-koh]' },
+  { cz: 'Co děláš?', en: 'What do you do?', pron: '[tso dyeh-lash]' },
+],
 };
 
 /* ----- Verb conjugations (present tense) ----- */
@@ -167,6 +230,18 @@ const VERBS = [
       'oni':      'chtějí',
     },
   },
+  {
+  inf: 'mluvit',
+  meaning: 'to speak',
+  forms: {
+    'já': 'mluvím',
+    'ty': 'mluvíš',
+    'on/ona': 'mluví',
+    'my': 'mluvíme',
+    'vy': 'mluvíte',
+    'oni': 'mluví',
+  },
+},
 ];
 
 const PRONOUNS = ['já', 'ty', 'on/ona', 'my', 'vy', 'oni'];
